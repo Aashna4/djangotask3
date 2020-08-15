@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Log-In page</title>
+        <h1>Log In Page</h1>
+    </head>
+    <body>
+        {% for message in messages %}
+        <h4>{{message}}</h4>
+        {% endfor %}
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            User Name : <input type="text" name="user_name"><br>
+            Password : <input type="password" name="p1"><br>
+            <input type="submit" value="Log In"><br>
+        </form>
+    </body>
+</html>
